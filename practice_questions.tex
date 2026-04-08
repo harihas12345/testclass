@@ -1,0 +1,213 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+
+% Page style
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Cloud Operations 2 - Weekly Practice Questions}
+\fancyhead[R]{ACI Q2}
+\fancyfoot[C]{\thepage}
+
+% Title formatting
+\titleformat{\section}{\Large\bfseries\color{blue!70!black}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{blue!50!black}}{\thesubsection}{1em}{}
+
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\Huge\bfseries Weekly Practice Questions\par}
+    \vspace{1cm}
+    {\LARGE Cloud Operations 2\par}
+    \vspace{0.5cm}
+    {\Large AWS Cloud Institute - Q2\par}
+    \vspace{2cm}
+    
+    \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=About This Guide]
+    This companion guide contains 110 scenario-based practice questions designed to reinforce your learning in Cloud Operations 2. Each week has 10 challenging questions that test your understanding of key concepts and their practical applications.
+    
+    \vspace{0.5cm}
+    \textbf{Features:}
+    \begin{itemize}
+        \item Scenario-based questions reflecting real-world situations
+        \item Multiple-choice and multiple-response formats
+        \item Aligned with AWS Certified SysOps Administrator exam domains
+        \item Answer key included at the end
+    \end{itemize}
+    \end{tcolorbox}
+    
+    \vspace{2cm}
+    {\large \today\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Week 1: DevOps 2 - Part 1}
+\subsection{CI/CD, Automated Testing, and Code Reviews}
+
+\begin{enumerate}[label=\textbf{Q\arabic*.}]
+
+\item \textbf{Scenario:} Your development team is implementing a CI/CD pipeline for a microservices-based application. The team has noticed that while unit tests pass successfully in the development environment, integration issues frequently occur in production. The current pipeline uses AWS CodePipeline with CodeBuild for running unit tests, but there's no automated integration testing stage. The application consists of five microservices that communicate via REST APIs, and deployment failures have increased by 40\% over the past month. Management wants to reduce deployment failures while maintaining rapid release cycles.
+
+Which combination of actions would BEST address this situation? (Select TWO)
+
+\begin{enumerate}[label=\Alph*.]
+    \item Increase the frequency of unit test execution and add more unit test cases to achieve 100\% code coverage across all microservices
+    \item Add an integration testing stage in CodePipeline that deploys services to a staging environment and runs API contract tests before production deployment
+    \item Implement Amazon CodeGuru Reviewer to automatically review code changes and block deployments if critical issues are detected
+    \item Configure CodeBuild to run integration tests in parallel with unit tests to reduce overall pipeline execution time
+    \item Create a separate staging environment that mirrors production and add a manual approval stage after integration testing
+\end{enumerate}
+
+\textit{Answer: B, E}
+
+\item \textbf{Scenario:} A financial services company is building a CI/CD pipeline for their payment processing application. Due to regulatory requirements, all code changes must be reviewed for security vulnerabilities and compliance issues before deployment. The development team currently uses AWS CodeCommit for source control and wants to automate security scanning without significantly impacting developer productivity. The team deploys approximately 50 code changes per day, and manual security reviews are creating a bottleneck. They need a solution that provides actionable feedback within minutes of code commit.
+
+What is the MOST efficient approach to meet these requirements?
+
+\begin{enumerate}[label=\Alph*.]
+    \item Configure AWS CodePipeline to trigger AWS Lambda functions that perform custom security scans using third-party tools, then store results in Amazon S3 for manual review
+    \item Implement Amazon CodeGuru Security to automatically scan code on every commit, integrate findings into pull requests, and configure CodePipeline to fail builds when critical vulnerabilities are detected
+    \item Set up AWS CodeBuild to run OWASP dependency checks and static analysis tools, then require manual approval from the security team before proceeding to deployment stages
+    \item Use AWS Security Hub to aggregate security findings from multiple sources and create Amazon EventBridge rules to notify developers via Amazon SNS when issues are detected
+\end{enumerate}
+
+\textit{Answer: B}
+
+\item \textbf{Scenario:} Your organization has adopted a DevOps culture and implemented CI/CD pipelines across 15 different application teams. Each team uses AWS CodePipeline with CodeBuild for automated testing. However, the operations team has noticed inconsistent testing practices: some teams only run unit tests, others skip tests entirely during hotfixes, and test coverage varies from 30\% to 85\% across projects. Leadership wants to establish minimum quality gates while allowing teams flexibility in their testing strategies. The goal is to prevent deployments of code that doesn't meet basic quality standards without creating excessive overhead.
+
+Which approach would BEST balance quality requirements with team autonomy?
+
+\begin{enumerate}[label=\Alph*.]
+    \item Mandate that all teams achieve exactly 80\% code coverage and configure CodeBuild to fail builds that don't meet this threshold, with no exceptions for any deployment type
+    \item Create organizational standards requiring minimum 60\% code coverage for unit tests and at least one integration test suite, implement these checks in CodeBuild, and provide teams with reusable buildspec templates
+    \item Implement Amazon CodeGuru Reviewer across all repositories with automatic blocking of pull requests that have critical issues, and require security team approval for all production deployments
+    \item Establish a centralized testing team that reviews all code changes before deployment and maintains a shared test suite that all applications must pass
+\end{enumerate}
+
+\textit{Answer: B}
+
+
+\item \textbf{Scenario:} A SaaS company runs a multi-tenant application that processes customer data through a series of AWS Lambda functions triggered by API Gateway. The development team uses AWS CodePipeline for continuous delivery, with stages for source (CodeCommit), build (CodeBuild), and deploy (CloudFormation). Recently, a deployment introduced a bug that caused data processing failures for 20\% of customers, but the issue wasn't detected until customers reported problems. The team wants to implement automated testing that validates the entire workflow before production deployment, including API endpoints, Lambda function execution, and data processing accuracy.
+
+What testing strategy should be implemented in the CodePipeline to catch such issues?
+
+\begin{enumerate}[label=\Alph*.]
+    \item Add a CodeBuild stage that runs unit tests for each Lambda function individually, checking function logic and mocking all external dependencies and API calls
+    \item Implement a testing stage that deploys the application to a staging environment, runs end-to-end integration tests simulating real customer workflows, and validates data processing results before promoting to production
+    \item Configure AWS X-Ray tracing in production and use Amazon CloudWatch alarms to automatically roll back deployments when error rates exceed thresholds
+    \item Use AWS CodeDeploy with canary deployment strategy to gradually roll out changes to 10\% of customers first, monitoring for errors before full deployment
+\end{enumerate}
+
+\textit{Answer: B}
+
+\item \textbf{Scenario:} Your team maintains a legacy monolithic application that is being gradually refactored into microservices. The CI/CD pipeline uses AWS CodePipeline with multiple stages: source control (CodeCommit), build (CodeBuild), unit testing (CodeBuild), and deployment (CodeDeploy). The unit testing stage currently takes 45 minutes to complete because it runs tests sequentially for all modules. The team deploys 3-4 times per day, and the long testing duration is impacting productivity. The application has 12 major modules with independent test suites, and test failures in one module shouldn't block testing of other modules.
+
+How can you optimize the testing stage to reduce pipeline execution time while maintaining test reliability?
+
+\begin{enumerate}[label=\Alph*.]
+    \item Configure CodeBuild to use a larger compute instance type with more CPU and memory resources to speed up sequential test execution
+    \item Modify the buildspec.yml to run tests for all 12 modules in parallel using CodeBuild batch builds, with each module tested in a separate build job
+    \item Reduce the number of test cases by removing redundant tests and focusing only on critical path testing to decrease overall execution time
+    \item Implement test result caching in CodeBuild so that unchanged modules skip testing, only running tests for modules with code changes
+\end{enumerate}
+
+\textit{Answer: B}
+
+\item \textbf{Scenario:} A healthcare technology company is developing a patient management system that must comply with HIPAA regulations. The development team uses AWS CodeCommit for version control and wants to implement automated code reviews to identify potential security vulnerabilities, particularly around data handling and encryption. The team consists of 8 developers who create approximately 30 pull requests per week. Manual code reviews by the security team are thorough but take 2-3 days, creating delays. The company needs a solution that provides immediate security feedback while still maintaining human oversight for critical changes.
+
+Which implementation would BEST meet these requirements?
+
+\begin{enumerate}[label=\Alph*.]
+    \item Configure Amazon CodeGuru Reviewer to automatically analyze pull requests for security issues and code quality, provide inline recommendations, and require security team approval only for pull requests with high-severity findings
+    \item Implement AWS Lambda functions triggered by CodeCommit events to run custom security scanning tools, block all pull requests by default, and require security team review before any merge
+    \item Use AWS CodeBuild to run static application security testing (SAST) tools on every commit, generate reports in Amazon S3, and send notifications to the security team via Amazon SNS
+    \item Deploy third-party code review tools on Amazon EC2 instances, integrate with CodeCommit webhooks, and maintain a queue of pull requests for security team review
+\end{enumerate}
+
+\textit{Answer: A}
+
+\item \textbf{Scenario:} Your organization has implemented a CI/CD pipeline using AWS CodePipeline for a Node.js application. The pipeline includes stages for source (CodeCommit), build (CodeBuild), test (CodeBuild), and deploy (Elastic Beanstalk). The testing stage runs unit tests using Jest and generates code coverage reports. Management has mandated that all deployments must have at least 75\% code coverage. Currently, the pipeline deploys even when coverage is below this threshold because the test stage only checks if tests pass, not coverage percentage. You need to enforce the coverage requirement without modifying the application code.
+
+What is the MOST effective way to implement this requirement?
+
+\begin{enumerate}[label=\Alph*.]
+    \item Modify the buildspec.yml in the test stage to parse the coverage report, use conditional logic to fail the build if coverage is below 75\%, and configure CodePipeline to stop on build failure
+    \item Create an AWS Lambda function that retrieves coverage reports from S3, calculates the percentage, and uses AWS Step Functions to control whether the pipeline continues to the deploy stage
+    \item Configure Amazon CloudWatch Events to monitor CodeBuild completion, trigger a Lambda function to check coverage, and manually stop the pipeline if coverage is insufficient
+    \item Implement a manual approval stage after testing where reviewers check the coverage report before approving deployment to production
+\end{enumerate}
+
+\textit{Answer: A}
+
+\item \textbf{Scenario:} A software development company uses AWS CodePipeline to automate deployments of their e-commerce platform. The pipeline has been experiencing intermittent failures in the testing stage, where integration tests sometimes fail due to timing issues when external services (payment gateway, inventory system) are slow to respond. The tests are configured with a 5-second timeout, which works 90\% of the time but occasionally causes false failures. The team wants to improve test reliability without masking real issues or significantly increasing pipeline execution time. The external services are third-party APIs that the team cannot modify.
+
+What approach would BEST improve test reliability?
+
+\begin{enumerate}[label=\Alph*.]
+    \item Increase the timeout to 30 seconds for all integration tests to accommodate slow external service responses
+    \item Implement retry logic in the test code with exponential backoff for external service calls, and configure tests to fail only after 3 consecutive failures
+    \item Remove integration tests that depend on external services from the pipeline and run them separately on a scheduled basis
+    \item Mock all external service calls in the integration tests to eliminate dependency on third-party API response times
+\end{enumerate}
+
+\textit{Answer: B}
+
+\item \textbf{Scenario:} Your team is building a CI/CD pipeline for a Python-based data processing application that runs on AWS Lambda. The application processes files uploaded to Amazon S3, transforms the data, and stores results in Amazon DynamoDB. The current pipeline uses CodePipeline with CodeBuild for testing, but tests only validate individual Lambda function logic. Recently, a deployment caused production issues because the Lambda function's IAM role lacked permissions to write to DynamoDB, even though the function code was correct. The team wants to catch such configuration issues before production deployment.
+
+Which testing approach would BEST prevent this type of issue?
+
+\begin{enumerate}[label=\Alph*.]
+    \item Enhance unit tests to mock AWS service calls and verify that the correct API methods are invoked with proper parameters
+    \item Add an integration testing stage that deploys the Lambda function to a test environment using AWS SAM or CloudFormation, uploads a test file to S3, and verifies end-to-end functionality including DynamoDB writes
+    \item Implement AWS Config rules to check Lambda function IAM policies and trigger Amazon SNS notifications when permissions are insufficient
+    \item Use AWS IAM Access Analyzer to review Lambda function permissions before deployment and require manual approval if issues are detected
+\end{enumerate}
+
+\textit{Answer: B}
+
+\item \textbf{Scenario:} A development team is implementing continuous integration for a microservices architecture consisting of 8 services deployed on Amazon ECS. Each service has its own CodePipeline, and services communicate via REST APIs. The team has noticed that when one service is updated, dependent services sometimes break due to API contract changes. For example, a recent update to the authentication service changed the response format, breaking three downstream services. The team wants to prevent such breaking changes from reaching production while maintaining independent deployment pipelines for each service.
+
+What strategy would MOST effectively address this challenge?
+
+\begin{enumerate}[label=\Alph*.]
+    \item Implement API versioning for all services and maintain backward compatibility for at least two versions, allowing dependent services time to migrate
+    \item Create a centralized integration testing pipeline that deploys all services together and runs cross-service tests before any individual service can deploy to production
+    \item Use Amazon CodeGuru Reviewer to analyze API changes and automatically notify owners of dependent services when breaking changes are detected
+    \item Implement contract testing using tools like Pact, where each service pipeline validates that API contracts are maintained before deployment
+\end{enumerate}
+
+\textit{Answer: D}
+
+\end{enumerate}
+
+\newpage
+\section{Week 2: DevOps 2 - Part 2}
+\subsection{CI/CD Pipeline Integration, Deployment Strategies, and DevOps Environments}
+
+\begin{enumerate}[label=\textbf{Q\arabic*.}, resume]
+
+\item \textbf{Scenario:} Your company runs a customer-facing web application on Amazon EC2 instances behind an Application Load Balancer. The application serves 50,000 active users daily, and any downtime directly impacts revenue. The development team wants to implement automated deployments using AWS CodeDeploy, but the operations team is concerned about the risk of deploying faulty code that could cause widespread outages. The current manual deployment process takes 2 hours and requires taking the application offline for 15 minutes. Management wants zero-downtime deployments with the ability to quickly rollback if issues are detected.
+
+Which deployment strategy would BEST meet these requirements?
+
+\begin{enumerate}[label=\Alph*.]
+    \item Implement an in-place deployment strategy using CodeDeploy, deploying to all instances simultaneously to minimize deployment duration
+    \item Configure a blue/green deployment with CodeDeploy, deploying to a new set of instances, testing thoroughly, then switching traffic via the load balancer with the ability to quickly switch back if needed
+    \item Use a rolling deployment strategy that updates 25\% of instances at a time, with health checks between batches to detect issues early
+    \item Implement a canary deployment that routes 5\% of traffic to the new version for 1 hour, monitors metrics, then gradually increases traffic if no issues are detected
+\end{enumerate}
+
+\textit{Answer: B}
+

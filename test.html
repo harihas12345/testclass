@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test questions.js</title>
+</head>
+
+<body>
+    <h1>Testing questions.js syntax...</h1>
+    <div id="result"></div>
+
+    <script src="questions.js"></script>
+    <script>
+        const resultDiv = document.getElementById('result');
+
+        try {
+            if (typeof questionsDB === 'undefined') {
+                resultDiv.innerHTML = '<p style="color: red;">❌ ERROR: questionsDB is not defined!</p>';
+            } else {
+                const weeks = Object.keys(questionsDB);
+                resultDiv.innerHTML = `
+                    <p style="color: green;">✅ SUCCESS! questionsDB loaded</p>
+                    <p>Found ${weeks.length} weeks:</p>
+                    <ul>
+                        ${weeks.map(w => `<li>${w}: ${questionsDB[w].questions.length} questions</li>`).join('')}
+                    </ul>
+                `;
+            }
+        } catch (error) {
+            resultDiv.innerHTML = `<p style="color: red;">❌ ERROR: ${error.message}</p>`;
+        }
+    </script>
+</body>
+
+</html>

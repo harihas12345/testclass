@@ -1,0 +1,99 @@
+CLOUD OPERATIONS 2 - INTERACTIVE PRACTICE QUESTIONS
+===================================================
+
+WHAT YOU HAVE:
+--------------
+✅ Interactive web exam with IMMEDIATE feedback
+✅ 110 scenario-based questions (10 per week × 11 weeks)
+✅ Questions aligned with AWS SysOps Administrator exam
+✅ Beautiful, mobile-friendly interface
+✅ LaTeX document for PDF generation
+
+FILES FOR AMPLIFY DEPLOYMENT:
+-----------------------------
+1. index.html - Main web interface
+2. app.js - Interactive logic (immediate right/wrong feedback)
+3. questions.js - All 110 questions with explanations
+4. amplify.yml - Amplify configuration
+5. README.md - Deployment instructions
+
+BONUS FILES:
+-----------
+- practice_questions.tex - LaTeX source for PDF version
+- extract_pdf.py - Python script to extract PDF content
+
+HOW IT WORKS:
+------------
+1. User selects a week (1-11)
+2. Reads scenario-based question
+3. Clicks an answer
+4. IMMEDIATELY sees:
+   - ✓ Green checkmark if correct
+   - ✗ Red X if incorrect
+   - Correct answer highlighted in green
+   - Wrong answer highlighted in red
+   - Detailed explanation
+5. Moves to next question
+6. Gets final score with performance breakdown
+
+DEPLOY TO AMPLIFY:
+-----------------
+1. Push to GitHub repository
+2. Go to AWS Amplify Console
+3. Connect repository
+4. Deploy (auto-detects static site)
+5. Share URL with classmates!
+
+FEATURES:
+--------
+✨ Immediate feedback on every answer
+✨ No "Submit" button needed - click and know instantly
+✨ Visual indicators (✓/✗) on all options
+✨ Detailed explanations for learning
+✨ Progress tracking per week
+✨ Performance breakdown at end
+✨ Retry capability
+✨ Mobile responsive
+✨ No backend/database needed
+✨ Fast loading
+✨ Works offline after first load
+
+QUESTION COVERAGE:
+-----------------
+Week 1: DevOps 2 Part 1 (CI/CD, Testing, Code Reviews)
+Week 2: DevOps 2 Part 2 (Deployment Strategies)
+Week 3: DevOps 2 Part 3 (DevSecOps)
+Week 4: Infrastructure as Code Part 1
+Week 5: Infrastructure as Code Part 2
+Week 6: Logging and Scaling Part 1
+Week 7: Logging and Scaling Part 2
+Week 8: Monitoring and Troubleshooting Part 1
+Week 9: Monitoring and Troubleshooting Part 2
+Week 10: Monitoring and Troubleshooting Part 3
+Week 11: Monitoring and Troubleshooting Part 4
+
+EXAM DOMAIN ALIGNMENT:
+---------------------
+✓ Domain 1: Monitoring, Logging, Remediation (20%)
+✓ Domain 2: Reliability & Business Continuity (16%)
+✓ Domain 3: Deployment, Provisioning, Automation (18%)
+✓ Domain 4: Security & Compliance (16%)
+✓ Domain 5: Networking & Content Delivery (18%)
+✓ Domain 6: Cost & Performance Optimization (12%)
+
+SHARING (NO ATTACHMENTS):
+------------------------
+Just share the Amplify URL!
+Example: https://main.d1234abcd.amplifyapp.com
+
+Everyone can access instantly - no downloads needed!
+
+NEXT STEPS:
+----------
+1. Test locally: Open index.html in browser
+2. Push to GitHub
+3. Deploy to Amplify
+4. Share URL with study group
+5. Practice and ace your exams!
+
+Good luck! 🚀☁️

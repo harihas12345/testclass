@@ -1,0 +1,688 @@
+ 
+  
+ 
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   1 AWS Cloud Institute : Cloud Operations 2 Syllabus   
+ 
+Course overview  
+In this course, you will work with application deployment services. You will learn about DevOps team enablement, the 
+AWS Cloud Development Kit, and Infrastructure as Code and its benefits. This course covers distributed tracing, 
+troubleshooting, and open -source monitoring.  
+ 
+Instructor -led training (ILT) sessions   
+Attendance at ILT sessions is strongly encouraged, but attendance does not count toward course completion. You can 
+use the ILT sessions to explore concepts presented in the online learning content in greater depth, connect with AWS 
+instructors and ACI lear ners, and prepare for the weekly final assessment. All ILT sessions, except for  office hours, are 
+recorded and will be available on -demand for you to watch when you have time. Multiple live ILT sessions are offered 
+each day to accommod ate a range of schedules.  
+ 
+Course completion requirements  
+At the end of each module, you will complete a multiple -choice final assessment. You have unlimited opportunities to 
+achieve a passing score on each final assessment. You must complete the final assessments  with a score of 8 0% or 
+higher to receive credit for the course. ILT attendance or watching ILT recordings is strongly encouraged but is not 
+required for course completion.  
+ 
+Week 1: DevOps 2 – Part 1  
+ 
+Goal   
+Build your knowledge of continuous integration and continuous delivery (CI/CD) by exploring its significance and best 
+practices. Learn how to automate testing processes with continuous integration and AWS CodeBuild to make sure 
+there are  efficient and reliable software -delivery pipelines. Gain insight about  integrating code reviews into automated 
+testing workflows to foster collaboration and code quality.  
+ 
+Learning objectives   
+• Define and explain the core principles of CI/CD  
+• Describe the benefits and challenges of implementing CI/CD  
+• Identify the key components of a CI/CD pipeline  
+• Explain best practices for a CI/CD pipeline  
+• Explain the benefits of automating testing code changes  
+• Describe code coverage and its purpose for code testing  
+• Identify non -AWS testing code tools  
+• Describe how CodeBuild performs application testing  
+• State the types of testing CodeBuild can perform  
+• Configure CodeBuild to perform application testing  
+• Describe the relationship between automated testing and code reviews  
+• Explore techniques for automated testing and code review integration  
+• Explain what Amazon CodeGuru is, its benefits, and use cases  
+• Understand how CodeGuru helps with manual code reviews  
+AWS Cloud Institute  
+Cloud Operations 2  Syllabus  
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   2  
+Outline   
+1. Review of Continuous Integration and Continuous Delivery  
+a. Review of Continuous Integration and Continuous Delivery (CI/CD)  
+i. Review of DevOps Principles  
+ii. CI/CD Core Principles  
+iii. Benefits and Challenges of CI/CD  
+iv. Best Practices for CI/CD Pipelines  
+v. AWS SimuLearn Challenge: CI/CD Pipelines for APIs  
+vi. Knowledge Check  
+2. Automate Testing with Continuous Integration  
+a. Automate Testing with Continuous Integration  
+i. Testing Code Changes  
+ii. Unit Testing in CI/CD  
+iii. Benefits of Automating Testing Code Changes  
+iv. Code Coverage and its Purpose for Code Testing  
+v. Non-AWS Unit Testing Code Tools  
+vi. Knowledge Check  
+3. Automate Testing with AWS CodeBuild  
+a. Automate Testing with AWS CodeBuild  
+i. Review of AWS CodeBuild  
+ii. Types of Testing in AWS CodeBuild  
+iii. Lab: Using AWS CodePipeline for Unit Testing  
+iv. Knowledge Check  
+4. Integrating Code Reviews in Automated Testing  
+a. Integrating Code Reviews in Automated Testing  
+i. Automated Testing and Code Reviews  
+ii. Methods for Automated Testing and Code Review Integration  
+iii. Amazon CodeGuru  
+iv. Lab: Automating Code Reviews with Amazon CodeGuru  
+v. Knowledge Check  
+ 
+Hands -on labs  
+• AWS SimuLearn Challenge: CI/CD Pipelines for APIs (60 min)  
+In this lab, you are assigned the vital task of repairing and finalizing the CI/CD pipeline for the company’s APIs. 
+Although  the core architecture is already in place, some key configurations are missing. Your goal is to 
+complete the required tests and make sure the pipeline is fully operational. When your task is successfully 
+completed, the Task Manager application will be full y functional, so employees can create and manage tasks 
+efficiently.  
+• Lab: Using AWS Code Pipeline for Unit Testing (60 min)  
+In this lab, you will  use AWS CodePipeline to perform unit testing for an application.  
+• Lab: Automating Code Reviews with Amazon CodeGuru (60 min)  
+In this lab, you will use CodeGuru to perform a review on existing code.  
+ 
+Week 2: DevOps 2 – Part 2  
+ 
+AWS Cloud Institute  
+Cloud Operations 2  Syllabus  
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   3 Goal  
+Learn about the CI/CD pipeline and how it enables seamless automated software delivery. You will explore various 
+deployment strategies for CI/CD  to help ensure efficient and reliable releases. You will also learn how to provide 
+consistent and dependable DevOps environments to enable streamlined development and operations processes.  
+ 
+Learning objectives   
+• Explain an application developer's role and responsibilities with continuous delivery  
+• Explain how CodePipeline works and its benefits  
+• Describe AWS CodeDeploy and its benefits and purpose  
+• Explain CodeDeploy components  
+• Explain the need for a deployment strategy in continuous delivery and deployment  
+• Describe various deployment strategies  
+• Evaluate application deployment requirements  
+• Recommend an appropriate deployment strategy  
+• Describe the need for managing DevOps standardization  
+• Explain the requirements of DevOps standardization tools  
+• Describe AWS Proton, its purpose, and the benefits  
+• Create services and environments with AWS Proton  
+• Explain how AWS Service Catalog provides a self -service experience  
+ 
+Outline   
+1. Integrating with the CI/CD Pipeline  
+a. Integrating with the CI/CD Pipeline  
+i. The Application Developer Role in CI/CD  
+ii. Continuous Delivery Pipeline Requirements  
+iii. Review of AWS CodeDeploy  
+iv. Review of AWS CodePipeline  
+v. Code Testing in Continuous Delivery  
+vi. Lab: Using AWS CodePipeline for Integration Testing  
+vii. Knowledge Check  
+2. Deployment Strategies for Continuous Delivery and Deployment  
+a. Deployment Strategies for Continuous Delivery and Deployment  
+i. Types of Deployment Strategies for CD  
+ii. In-Place Deployments  
+iii. Immutable Updates  
+iv. Rolling Deployments  
+v. Blue/Green Deployments  
+vi. Lab: Blue/Green Deployments with AWS CodeDeploy and Amazon EC2  
+vii. Knowledge Check  
+3. Providing Reliable and Consistent DevOps Environments  
+a. Providing Reliable and Consistent DevOps Environments  
+i. Managing DevOps Standards  
+ii. AWS Proton  
+iii. Demo: Creating Environments and Services with AWS Proton  
+iv. AWS Service Catalog  
+v. Demo: Create Deployment Pipeline with AWS Service Catalog  
+AWS Cloud Institute  
+Cloud Operations 2  Syllabus  
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   4 vi. Lab: Deploying Standardized Assets Using AWS Service Catalog  
+vii. Knowledge Check  
+ 
+Hands -on labs  
+• Lab: Using AWS CodePipeline for Integration Testing (60 min)  
+This lab focuses on integrating automated integration testing into a Continuous Integration and Continuous 
+Delivery (CI/CD) pipeline using CodePipeline. You will gain hands -on experience in configuring the pipeline to 
+include an integration testing stage, which validates the application’s functionality before deployment.  
+• Lab: Blue/Green Deployments with AWS CodeDeploy and Amazon EC2 (90 min)  
+In this lab, you will set up a blue -green deployment strategy using CodeDeploy for an existing AWS 
+CodeCommit repository and CodePipeline deployment. You will learn how to create a new deployment group, 
+add an application load balancer, and modify the existing deployment to perform blue -green deployments 
+across the two Amazon Elastic Compute Cloud (Amazon EC2)  instances.  
+• Lab: Deploying Standardized Assets Using AWS Service Catalog (90 min)  
+In this lab, you will create an AWS Service Catalog portfolio that contains four products. Each  Service Catalog 
+product is backed by an AWS CloudFormation template, which is supplied as part of the lab.  
+ 
+Week 3: DevOps 2 – Part 3  
+ 
+Goal   
+Explore the concept of development, security, and operations (DevSecOps) to understand its significance in integrating 
+security practices throughout the software development lifecycle. You will also learn about practical approaches to 
+applying DevSecOps pr inciples.  
+ 
+Learning objectives   
+• Describe DevSecOps and its role in securing software delivery  
+• Identify DevSecOps components  
+• Identify common vulnerabilities in software development  
+• Explain common security testing practices in software development  
+• Identify AWS and third -party security testing tools  
+• Explain the role of CodeGuru Security in security testing  
+• Explain how Amazon Inspector automates vulnerability management at scale  
+• Explain DevSecOps best practices  
+ 
+Outline  
+1. DevSecOps  
+a. DevSecOps  
+i. The Role of DevSecOps  
+ii. Key Components of DevSecOps  
+iii. Common Vulnerabilities in Software Development  
+iv. Security Testing Practices in DevSecOps  
+v. Demo: SAST  
+vi. Knowledge Check  
+2. Applying DevSecOps  
+a. Applying DevSecOps  
+i. Security Testing Tools  
+AWS Cloud Institute  
+Cloud Operations 2  Syllabus  
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   5 ii. Getting Started with Amazon CodeGuru Security  
+iii. Getting Started with Amazon Inspector  
+iv. Automating Vulnerability Management with Amazon Inspector  
+v. Scenario: DevSecOps Best Practices  
+vi. Lab: Vulnerability Scanning with Amazon Inspector  
+vii. AWS SimuLearn: Secure Self -Service Infrastructure  
+viii. AWS SimuLearn: Securing Your Servers  
+ix. Knowledge Check  
+ 
+Hands -on labs  
+• Lab: Using Amazon Inspector for Vulnerability Scanning (75 min)  
+In this lab, you will use Amazon Inspector to scan for vulnerabilities in your AWS resources, specifically Amazon 
+EC2 instances and AWS Lambda functions. You learn how to configure Amazon Inspector, interpret the 
+vulnerability reports, and remediate the fi ndings.  
+• AWS SimuLearn Lab: Secure Self -Service Infrastructure (60 min)  
+In this lab, you will help the head of the IT Services department at a web gaming company who has limited 
+staff to deploy IT services to other departments. The IT Services department is looking for a way to hand off 
+these deployments to the other departments by implementing  a self -service tool in which configurations 
+already meet compliance requirements and resources are secure.  
+• AWS SimuLearn Lab: Securing Your Servers (60 min)  
+In this lab, you will help a mining operation that built an enterprise resource planning (ERP) application to 
+process job applicant submissions. The application is deployed and running, but the mining operation wants 
+help setting least privilege permissions to limit the application's effect on AWS resource s. 
+ 
+Week 4: Infrastructure as Code – Part 1  
+ 
+Goal   
+Build on what you have learned  about infrastructure as code (IaC) and how it fits into a DevOps workflow. Discover 
+both AWS and Non -AWS IaC tools, such as AWS CloudFormation, AWS CDK, and Terraform.  
+ 
+Learning objectives   
+• Define IaC and its benefits  
+• Describe the problems IaC solves in traditional infrastructure management  
+• Identify the benefits of IaC for application developers in a DevOps environment   
+• Explain how IaC fits into the DevOps workflow  
+• Identify an application developer’s responsibilities in writing and maintaining IaC templates  
+• Describe how application developers and infrastructure teams work together over IaC  
+• Explain the common components and requirements of an IaC tool  
+• Describe both AWS and non -AWS IaC tools  
+• Describe Rules in CloudFormation and discuss working with them  
+• Explain Intrinsic functions in CloudFormation and discuss working with them  
+• Describe Conditions in CloudFormation and discuss working with them  
+• Define the DependsOn  attribute and describe its use  
+• Define Template Macros and describe how they work  
+• Describe the benefits of modules and explain how they work  
+• Explain using the CloudFormation Designer  
+AWS Cloud Institute  
+Cloud Operations 2  Syllabus  
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   6  
+Outline  
+1. Review Infrastructure as Code  
+a. Review of Infrastructure as Code  
+i. Define Infrastructure as code  
+ii. Knowledge Check  
+2. IAC as a Part of a DevOps Workflow  
+a. IaC as a Part of a DevOps Workflow  
+i. IaC as a Part of a DevOps Workflow  
+ii. Lab: Deploying Infrastructure as Code with AWS CodePipeline  
+iii. Developer Responsibilities in Writing and Maintaining IaC Templates  
+iv. How Developers and Infrastructure Teams Work Together over IaC  
+v. Knowledge Check  
+3. IaC Tools  
+a. IaC Tools  
+i. Common Components and Requirements of an IaC Tool  
+ii. AWS and Third -Party IaC Tools  
+iii. Lab: Building a Serverless API with Infrastructure Composer  
+iv. Knowledge Check  
+4. Building Templates in AWS CloudFormaton  
+a. Building Templates in AWS CloudFormaton  
+i. Review of AWS CloudFormation  
+ii. AWS CloudFormation Templates  
+b. Lab: Implementing AWS CloudFormation Intrinsic Functions and Keywords  
+c. Knowledge Check  
+ 
+Hands -on labs  
+• Lab: Deploying Infrastructure as Code with AWS CodePipeline (60 mins)  
+In this lab, you will use CodePipeline to deploy infrastructure as code (IaC) using an AWS CloudFormation 
+template. This lab includes steps for building out a CloudFormation template, creating a CodePipeline by 
+pulling source code from CodeCommit, and fina lly, creating and updating a CloudFormation stack.  
+• Lab: Building a Serverless API with Infrastructure Composer  (60 mins)  
+In this lab, you will gain hands -on experience using AWS Application Composer by creating a serverless 
+application  
+• Lab: Implementing AWS CloudFormation Intrinsic Functions and Keywords (60 mins)  
+In this lab, you will work with an existing AWS CloudFormation template that has been stripped of its intrinsic 
+functions, conditions, and rules. The template includes comments and instructions guiding you on how to 
+complete the missing elements. By fillin g in the necessary CloudFormation utilities, you will develop your 
+understanding of these advanced features.  
+ 
+  
+AWS Cloud Institute  
+Cloud Operations 2  Syllabus  
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   7 Week 5: Infrastructure as Code – Part 2  
+ 
+Goal   
+Learn how to build in AWS CloudFormation, work with CloudFormation stacks, explore CloudFormation Registry, use 
+the AWS Cloud Development Kit  (AWS CDK) , and test AWS CDK constructs.  
+ 
+Learning objectives   
+• Define a stack and change set  
+• List stack failure options in CloudFormation  
+• Identify the types of resources that support drift detection  
+• State the reasons for exporting and importing values from a stack  
+• Explain nested stacks  
+• State ways of working with Windows -based  stacks  
+• Discuss rolling back your infrastructure and the purpose of preparing for failure  
+ 
+Outline  
+1. Working with AWS CloudFormation Stacks  
+a. Working with AWS CloudFormation Stacks  
+i. Building and Managing Stacks  
+ii. Remediating Stack Drift  
+iii. Encountering Stack Failures  
+iv. Deploying Multiple Stacks  
+v. Lab: Deploying Advanced CloudFormation Stacks  
+vi. Knowledge Check  
+2. Expanding AWS CloudFormation Usage  
+a. Expanding AWS CloudFormation Usage  
+i. Using the CloudFormation Registry  
+ii. Exploring Amazon EventBridge  
+iii. AWS SimuLearn: Automation with CloudFormation  
+iv. Knowledge Check  
+3. Examining AWS Cloud Development Kit  
+a. Examining AWS Cloud Development Kit  
+i. Provisioning Resources with AWS CDK  
+ii. Lab: Working with Constructs in AWS CDK  
+iii. Knowledge Check  
+4. Testing AWS CDK Constructs  
+a. Testing AWS CDK Constructs  
+i. Testing Methods Used with CDK Apps  
+ii. Knowledge check  
+ 
+Hands -on labs  
+• Lab: Deploying Advanced CloudFormation Stacks (60 Mins)  
+In this lab, you will  use CloudFormation to create a nested stack, experience provisioning failure with stack 
+failure options, and modify a nested stack from a change set.  
+• AWS SimuLearn Challenge: Automation with CloudFormation (60 min)  
+In this lab, you will help reduce human error and standardize a robotics research deployment infrastructure.  
+AWS Cloud Institute  
+Cloud Operations 2  Syllabus  
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   8 • Lab: Working with Constructs in AWS CDK (60 Mins)  
+In this lab, you will  use AWS CDK within the AWS Cloud9 IDE to deploy and test a Lambda function  and the API 
+Gateway REST API.  
+ 
+Week 6: Logging and Scaling – Part 1  
+ 
+Goal   
+Gain knowledge of the purpose and benefits of logs. Identify AWS logging and monitoring services and learn how to 
+apply them to optimize infrastructure management and performance.  
+ 
+Learning objectives   
+• Describe how auto scaling works  
+• Discuss auto scaling with Amazon ECS , Amazon DynamoDB, Amazon Aurora, and Amazon EC2  
+• Describe different scaling policies  
+• Identify necessary services to auto scale through case studies  
+• Describe launch templates for Amazon EC2 Auto Scaling  
+• Explain how automatic scaling works for Amazon EC2 Spot Fleet  
+• Explain how AWS Elastic Beanstalk works  with an Amazon EC2 Auto Scaling group  
+• Explain how to use lifecycle hooks and AWS Lambda functions to create fully managed auto scaling  
+• Discuss predictive scaling for Amazon EC2 with machine learning  
+• Explain how Elastic Load Balancing (ELB) works and identify the types of ELB load balancers  
+• Discuss deployment strategies on AWS and identify the type of deployment by its characteristics  
+• Describe how to use load balancers for blue/green and canary deployments  
+• Discuss how ELB works with Amazon Route 53  
+• Describe how to use AWS PrivateLink to connect ELB services  
+ 
+Outline  
+1. Auto Scaling and Elastic Load Balancing  
+a. Auto Scaling  
+i. How Auto Scaling Works  
+ii. Auto Scaling with Amazon ECS  
+iii. Auto Scaling with DynamoDB  
+iv. Auto Scaling with Aurora  
+v. Amazon EC2 Auto Scaling  
+vi. Automatic and Manual Scaling  
+vii. Lab: Introduction to Amazon EC2 Auto Scaling  
+viii. Auto Scaling Case Studies  
+ix. Knowledge Check  
+b. Amazon EC2 Auto Scaling Optimization  
+i. Launch Templates  
+ii. Spot Fleets and Auto Scaling  
+iii. Amazon EC2 Auto Scaling Group for Elastic Beanstalk  
+iv. Creating Fully Managed Auto Scaling with Lifecycle Hooks  
+v. Predictive Scaling for Amazon EC2 Auto Scaling with Machine Learning  
+vi. Knowledge Check  
+AWS Cloud Institute  
+Cloud Operations 2  Syllabus  
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   9 c. Elastic Load Balancing  
+i. How Elastic Load Balancing Works  
+ii. Elastic Load Balancing Services  
+iii. Availability Zones and Load Balancer Nodes  
+iv. Deployment Strategies  
+v. Activity: Identifying the Type of Deployment by its Characteristics  
+vi. Using an Application Load Balancer for Canary and Blue/Green Deployments  
+vii. Lab: Introduction to Elastic Load Balancing  
+viii. How Elastic Load Balancing Integrates with Route 53  
+ix. Using PrivateLink to Connect with Elastic Load Balancing Services  
+x. AWS SimuLearn: Highly Available Web Applications  
+xi. Knowledge Check  
+ 
+Hand s-on labs  
+• Lab: Introduction to Amazon EC2 Auto Scaling (60 min)  
+In this lab, you will create a launch template that defines your Amazon Elastic Compute Cloud (Amazon EC2) 
+instances and an Amazon EC2 Auto Scaling group with a single instance in it. You will then terminate the 
+instance and verify that the instance was removed from service and replaced. To maintain a constant number 
+of instances, Amazon EC2 Auto Scaling automatically detects and responds to Amazon EC2 health and 
+reachability checks.  
+• Lab: Introduction to Elastic Load Balancing (60 min)  
+In this lab you will create, configure, and test a network load balancer and an application load balancer . 
+• AWS SimuLearn Lab: Highly Available Web Applications (60 min)  
+In this lab, you will help a travel agency create a highly available web application architecture.  
+ 
+Week 7: Logging and Scaling – Part 2  
+ 
+Goal   
+Learn about  the purpose and benefits of logs. Identify AWS logging and monitoring services and learn how to apply 
+them to optimize infrastructure management and performance.  
+ 
+Learning objectives   
+• Describe  types of logs and the importance of logging  
+• Describe the monitoring features of Amazon CloudWatch  
+• Describe the benefits of creating a monitoring plan and defining monitoring goals  
+• Compare two ways of monitoring instances: using the Amazon EC2  console and using the CloudWatch 
+dashboard  
+• Describe the benefits of monitoring with AWS CloudTrail  
+• Describe CloudWatch features for monitoring and troubleshooting  
+• Describe AWS X -Ray and how X -Ray works with CloudWatch  
+• Define high -resolution metrics and composite alarms and describe how CloudWatch uses alarms to invoke 
+scaling  
+ 
+  
+AWS Cloud Institute  
+Cloud Operations 2  Syllabus  
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   10 Outline  
+1. Monitoring and Amazon CloudWatch  
+a. Logging and Monitoring in AWS  
+i. Logging Overview  
+ii. Monitoring with CloudWatch  
+iii. Determining a Monitoring Strategy  
+iv. Establishing a Baseline with Amazon EC2 Metrics  
+v. Monitoring with the CloudWatch Agent  
+vi. Dashboards for Monitoring EC2 Instances  
+vii. Logging Activities with CloudTrail  
+viii. Knowledge Check  
+b. Monitoring Application Health  
+i. Keeping Your Applications Healthy  
+ii. Serverless Observability  
+iii. CloudWatch Container Insights  
+iv. CloudWatch Application Insights  
+v. CloudWatch Anomaly Detection  
+vi. CloudWatch Metric Streams  
+vii. AWS X -Ray 
+viii. Knowledge Check  
+c. Amazon CloudWatch for Health, Availability, and Security  
+i. CloudWatch Dashboards  
+ii. CloudWatch Synthetics and CloudWatch RUM  
+iii. CloudWatch Logs Insights  
+iv. CloudWatch Metrics Insights  
+v. Lab: Collecting and Analyzing Logs with Amazon CloudWatch Logs Insights  
+vi. CloudWatch Contributor Insights for Security  
+vii. Amazon CloudWatch Evidently  
+viii. Lab: Monitoring Security with Amazon CloudWatch  
+ix. High -Resolution Metrics and Alarms and Composite Alarms  
+x. Scaling with CloudWatch Alarms  
+xi. Knowledge Check  
+ 
+Hands -on labs  
+• Lab: Collecting and Analyzing Logs with Amazon CloudWatch Logs Insights (45 min)  
+In this lab, you will learn to use Amazon CloudWatch Logs Insights to interactively search and analyze log data 
+in Amazon CloudWatch Logs. You will set up log groups and log streams in CloudWatch Logs and run queries 
+against Amazon Virtual Private Cloud (Amazon VPC) flow logs and database logs to detect potential security 
+vulnerabilities.  
+• Lab: Monitoring Security with Amazon CloudWatch (45 min)  
+In this lab, you will monitor security on the database server with Amazon CloudWatch. You will configure the 
+database server to send log files to Amazon CloudWatch. You will then create CloudWatch alarms and 
+notifications to alert you to a specified number of login failures on your database server. Finally, you  will create 
+a CloudWatch alarm and notification to monitor outgoing traffic through a NAT gateway.  
+ 
+AWS Cloud Institute  
+Cloud Operations 2  Syllabus  
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   11 Week 8: Monitoring and Troubleshooting – Part 1  
+ 
+Goal   
+Learn the methodology to troubleshoot common technical use cases by using AWS CloudTrail and AWS Identity and 
+Access Management (IAM).  
+ 
+Learning objectives   
+• Explain the importance of a structured troubleshooting methodology and its benefits over ad -hoc 
+troubleshooting approaches  
+• Describe the key steps involved in the troubleshooting methodology  
+• Apply a troubleshooting methodology to diagnose common issues related to cloud infrastructure  
+• Develop a troubleshooting plan for a given cloud application scenario  
+• Understand  the purpose of AWS CloudTrail and differentiate between event types  
+• Analyze CloudTrail log files to identify potential security incidents  
+• Integrate CloudTrail with AWS services to automate log management and analysis processes  
+• Implement best practices for securing and managing CloudTrail trails  
+• Explain the purpose and functionality of CloudTrail Lake  
+ 
+Outline  
+1. Troubleshooting with AWS CloudTrail and Amazon IAM  
+a. Troubleshooting Methodology  
+i. Troubleshooting Methodology and Structured Approach  
+ii. Using Troubleshooting Methodology in Cloud Infrastructure  
+iii. Activity: Developing a Troubleshooting Plan  
+iv. Knowledge Check  
+b. Troubleshooting with CloudTrail  
+i. Activity: CloudTrail Review  
+ii. Analyzing AWS CloudTrail Log Files for Potential Security Incidents  
+iii. CloudTrail Integration  
+iv. Best Practices for Securing and Managing AWS CloudTrail  
+v. CloudTrail Lake  
+vi. Lab: Monitoring and Troubleshooting Amazon EC2 Workloads with Detective Controls  
+vii. Knowledge Check  
+c. Troubleshooting in Amazon IAM  
+i. Activity: Amazon IAM Policies  
+ii. Troubleshooting Common Errors in IAM Policies  
+iii. Troubleshooting Issues in IAM Role Assumptions, Trust Relationships, and Service -Linked Roles  
+iv. Activity: Tools and Services for Troubleshooting and Auditing Amazon IAM  
+v. Best Practices for IAM Policy Management  
+vi. Lab: Performing a Basic Audit of Your AWS Environment  
+vii. Knowledge Check  
+ 
+Hands -on labs  
+• Lab: Monitoring and Troubleshooting Amazon EC2 Workloads with Detective Controls  (75 min)  
+In this lab, you will  explore monitoring tools for your Amazon EC2 workloads, and apply troubleshooting steps 
+to correct issues affecting your current workloads.  
+AWS Cloud Institute  
+Cloud Operations 2  Syllabus  
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   12 • Lab: Performing a Basic Audit of Your AWS Environment  (45 min)  
+In this lab, you will perform basic audits of core AWS resources. You will use the AWS Management Console to 
+understand how to audit the use of multiple AWS services, such as Amazon EC2, Amazon VPC, Amazon IAM, 
+Amazon Security Groups, AWS CloudTrail, and Amazon CloudWatch.  
+ 
+Week 9: Monitoring and Troubleshooting – Part 2  
+ 
+Goal   
+Learn the importance of metric monitoring using Amazon CloudWatch, Lambda Insights, Internet Monitor , and 
+Network Monitor.  
+ 
+Learning objectives   
+• Use custom metrics for deeper insights  
+• Discuss enabling cross -account, cross -Region monitoring  
+• Recall CloudWatch anomaly detection and create a CloudWatch alarm based on anomaly detection  
+• Use CloudWatch Metrics Insights to create alarms  
+• Recall CloudWatch Container Insights and set up Container Insights on Amazon Elastic Container  Service 
+(Amazon ECS) and Amazon Elastic Kubernetes Service (Amazon EKS)  
+• Discuss troubleshooting with Container Insights  
+• Recall CloudWatch Lambda Insights and use Lambda Insights  
+• Identify root cause monitored by Lambda Insights  
+• Describe CloudWatch Internet Monitor and CloudWatch Network Monitor  
+ 
+Outline  
+1. Metrics and Network Monitoring Troubleshooting  
+a. Metric Monitoring  
+i. Custom Metrics  
+ii. Activity: Data Aggregation  
+iii. Cross -Account Cross -Region Monitoring  
+iv. Amazon CloudWatch Anomaly Detection  
+v. Alarms with Amazon CloudWatch Metrics Insights  
+vi. Activity: Exploring a Use Case Scenario with Amazon CloudWatch Custom Metrics  
+vii. Knowledge Check  
+b. Insights and Network Monitoring  
+i. AWS SimuLearn: Monitor and Analyze Network Traffic  
+ii. Using Amazon CloudWatch Container Insights  
+iii. Troubleshooting with CloudWatch Container Insights  
+iv. Using Amazon CloudWatch Lambda Insights  
+v. Troubleshooting with CloudWatch Lambda Insights  
+vi. Amazon CloudWatch Internet Monitor  
+vii. Activity: Amazon CloudWatch Network Monitor  
+viii. AWS SimuLearn: Traffic Mirroring  
+ix. Knowledge Check  
+ 
+  
+AWS Cloud Institute  
+Cloud Operations 2  Syllabus  
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   13 Hands -on labs  
+• AWS SimuLearn Lab: Monitor and Analyze Network Traffic (60 min)  
+In this lab, you will help aerospace engineers who want to monitor and analyze network traffic to detect 
+misuse of a space station's data and systems. The engineers want to capture information about IP traffic going 
+to and from the network interfaces of ea ch system, and then analyze the information to detect unusual 
+network activity.  
+• AWS SimuLearn Lab: Traffic Mirroring (60 min)  
+In this lab, the general of a galactic security fleet needs your help to ensure that their spaceships and planetary 
+bases are secure from any potential threats. The general wants a solution to monitor the fleet's network traffic 
+from their spaceships and b ases, and test the network's effectiveness.  
+ 
+Week 10: Monitoring and Troubleshooting – Part 3  
+ 
+Goal   
+Learn how to implement metric filters and Live Tail for monitoring, use Amazon CloudWatch Logs, d iscuss Amazon 
+CloudWatch Logs, and discuss troubleshooting with VPC Flow Logs.  
+ 
+Learning objectives   
+• Implement metric filters and Live Tail for monitoring  
+• Use CloudWatch Logs Insights for querying and analyzing log data  
+• Discuss CloudWatch Logs anomaly detection and pattern analysis  
+• Discuss troubleshooting with VPC Flow Logs  
+ 
+Outline  
+1. Logs and Application Monitoring  
+a. Logs  
+i. Metric Filters  
+ii. Live Tail Data with CloudWatch Logs  
+iii. Querying with CloudWatch Log Insights  
+iv. Log Anomaly Detection and Pattern Analysis  
+v. Troubleshooting with VPC Flow Logs  
+vi. Lab: Monitoring Applications and Infrastructure  
+vii. Knowledge Check  
+b. Application Monitoring  
+i. Using CloudWatch Application Insights  
+ii. Using CloudWatch Synthetics  
+iii. Using CloudWatch RUM  
+iv. Application Signals  
+v. Knowledge Check  
+ 
+Hands -on labs  
+• Lab: Monitoring Applications and Infrastructure (60 Mins)  
+In this lab, you will practice setting up and monitoring metrics for business -application events, define relevant 
+event thresholds for metrics, create an automated notification, and perform a remediation when metric 
+thresholds are exceeded.  
+ 
+AWS Cloud Institute  
+Cloud Operations 2  Syllabus  
+ 
+ 
+© 2025, Amazon Web Services, Inc. or its affiliates. All rights reserved.   14 Week 11: Monitoring and Troubleshooting – Part 4  
+ 
+Goal   
+Build foundational knowledge about the principles and implementations of distributed tracing with AWS X -Ray.  
+ 
+Learning objectives   
+• Discuss the features, benefits, and concepts of AWS X -Ray 
+• Explain traces  
+• Explore service graphs  
+• Explore trace maps   
+• Describe how to use filter expressions  
+• Describe cross -account tracing  
+• Understand how to use tracing with X -Ray 
+• Explain latency histograms  
+• Discuss X -Ray insights  
+• Describe the X -Ray Analytics console  
+• Discuss X -Ray SDK for Python  
+ 
+Outline  
+1. Tracing  
+a. VPC Reachability Analyzer  
+i. Network Troubleshooting  
+ii. Lab: Troubleshooting Website Reachability Behind a Load Balancer  
+iii. Reachability Analyzer Functionality and Use Cases  
+iv. Activity: Troubleshooting with Reachability Analyzer  
+v. Knowledge Check  
+b. Tracing with AWS X -Ray 
+i. X-Ray Features and Functionality  
+ii. X-Ray Concepts  
+iii. Tracing an Application  
+iv. Knowledge Check  
+c. Troubleshooting and Monitoring with AWS X -Ray 
+i. Activity: Latency Histograms  
+ii. Activity: X -Ray Insights and Analytics  
+iii. X-Ray SDK for Python  
+iv. AWS SimuLearn: Core Security Concepts  
+v. Knowledge Check  
+ 
+Hands -on labs  
+• Lab: Troubleshooting Website Reachability Behind a Load Balancer (60 Mins)  
+In this lab, you will explore the concepts of configuring a web server behind an Elastic Load Balancer (ELB). You 
+will address a scenario where users are not able to reach a website hosted on an Amazon Elastic Compute 
+Cloud (Amazon EC2) instance behind a l oad balancer.  
+• AWS SimuLearn Lab: Core Security Concepts (60 min)  
+In this lab, you will improve security at the city's stock exchange by ensuring that support engineers can only 
+perform  authorized actions.  

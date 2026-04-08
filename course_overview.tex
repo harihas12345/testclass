@@ -1,0 +1,542 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage[hidelinks, unicode=false]{hyperref}
+\usepackage{parskip}
+\usepackage{mdframed}
+\usepackage{array}
+
+\setlength{\headheight}{25pt}
+\addtolength{\topmargin}{-13pt}
+
+\definecolor{awsorange}{RGB}{255,153,0}
+\definecolor{awsblue}{RGB}{35,47,62}
+\definecolor{lightgray}{RGB}{245,245,245}
+\definecolor{analogyblue}{RGB}{232,244,255}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{awsblue}{\textbf{Cloud Operations 2 -- Course Overview}}}
+\fancyhead[R]{\textcolor{awsorange}{\textbf{ACI Q2}}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\headrule}{%
+  \hbox to\headwidth{\color{awsorange}\leaders\hrule height\headrulewidth\hfill}}
+
+\titleformat{\section}{\large\bfseries\color{awsblue}}{}{0em}{}[%
+  \color{awsorange}\titlerule]
+\titlespacing{\section}{0pt}{16pt}{6pt}
+
+\newmdenv[
+  backgroundcolor=analogyblue,
+  linecolor=awsorange,
+  linewidth=1.5pt,
+  leftline=true, rightline=false, topline=false, bottomline=false,
+  innerleftmargin=10pt, innerrightmargin=10pt,
+  innertopmargin=6pt,  innerbottommargin=6pt
+]{analogybox}
+
+\begin{document}
+
+% --------------------------------------------------------
+%  TITLE PAGE
+% --------------------------------------------------------
+\begin{titlepage}
+  \centering
+  \vspace*{3cm}
+  {\fontsize{34}{42}\selectfont\bfseries\color{awsblue}Cloud Operations 2\par}
+  \vspace{0.5cm}
+  {\fontsize{18}{26}\selectfont\color{awsorange}Course Overview \& Weekly Guide\par}
+  \vspace{0.5cm}
+  {\large AWS Cloud Institute -- Q2\par}
+  \vspace{2.5cm}
+  \begin{tcolorbox}[
+    colback=lightgray, colframe=awsblue, width=0.85\textwidth, arc=6pt,
+    title={\textbf{About This Document}},
+    fonttitle=\color{white}, colbacktitle=awsblue]
+  This document provides a concise overview of all 11 weeks of Cloud Operations 2.
+  Each week includes the core topics, key AWS services, and a short analogy to anchor
+  the concept before you dive into the full module.
+
+  \vspace{0.4cm}
+  \textbf{Course themes:} DevOps \textbullet{} Infrastructure as Code \textbullet{}
+  Monitoring \textbullet{} Troubleshooting \textbullet{} Distributed Tracing
+  \end{tcolorbox}
+  \vspace{2cm}
+  {\large \today\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% --------------------------------------------------------
+%  COURSE OVERVIEW
+% --------------------------------------------------------
+\section*{Course Overview}
+\addcontentsline{toc}{section}{Course Overview}
+
+Cloud Operations 2 builds on foundational AWS knowledge and focuses on the
+\textbf{operational side} of running software in the cloud.
+Over 11 weeks you will move through three broad themes:
+
+\begin{enumerate}
+  \item \textbf{Weeks 1--3: DevOps} -- automating how code is built, tested,
+        deployed, and secured.
+  \item \textbf{Weeks 4--5: Infrastructure as Code} -- treating your infrastructure
+        the same way you treat application code.
+  \item \textbf{Weeks 6--11: Observability} -- scaling, logging, monitoring, and
+        tracing so you always know what your system is doing.
+\end{enumerate}
+
+\textbf{Completion requirement:} Score 80\% or higher on the final assessment at the
+end of each module. Assessments can be retaken unlimited times.
+
+\newpage
+
+% --------------------------------------------------------
+%  WEEK 1
+% --------------------------------------------------------
+\section{Week 1 -- DevOps Part 1: CI/CD and Automated Testing}
+
+\textbf{Goal:} Understand the principles of Continuous Integration and Continuous
+Delivery (CI/CD), automate testing with AWS CodeBuild, and integrate code reviews
+into the pipeline.
+
+\textbf{Key topics:}
+\begin{itemize}[leftmargin=1.5em]
+  \item CI/CD core principles, benefits, and best practices
+  \item Automating unit testing -- code coverage and why it matters
+  \item AWS CodeBuild: types of tests it can run and how to configure them
+  \item Integrating code reviews with Amazon CodeGuru
+\end{itemize}
+
+\textbf{Key services:} AWS CodePipeline, AWS CodeBuild, Amazon CodeGuru
+
+\begin{analogybox}
+\textbf{Analogy -- The Assembly Line Quality Check}
+
+Think of a car assembly line. Workers do not wait until the car is fully built to
+check for defects -- they inspect each part as it is added. CI/CD works the same
+way: every time a developer pushes code, automated tests run immediately, catching
+defects early before they reach the customer.
+\end{analogybox}
+
+\textbf{Labs:} CI/CD Pipelines for APIs (SimuLearn) \textbullet{}
+Unit Testing with CodePipeline \textbullet{}
+Automating Code Reviews with CodeGuru
+
+\newpage
+
+% --------------------------------------------------------
+%  WEEK 2
+% --------------------------------------------------------
+\section{Week 2 -- DevOps Part 2: Deployment Strategies and DevOps Environments}
+
+\textbf{Goal:} Learn how CodePipeline and CodeDeploy work together to deliver
+software, explore deployment strategies, and understand how to standardize DevOps
+environments with AWS Proton and AWS Service Catalog.
+
+\textbf{Key topics:}
+\begin{itemize}[leftmargin=1.5em]
+  \item The developer's role in continuous delivery
+  \item Deployment strategies: In-Place, Rolling, Immutable, Blue/Green
+  \item AWS CodeDeploy components and configuration
+  \item AWS Proton for environment standardization
+  \item AWS Service Catalog for self-service infrastructure
+\end{itemize}
+
+\textbf{Key services:} AWS CodePipeline, AWS CodeDeploy, AWS Proton, AWS Service Catalog
+
+\begin{analogybox}
+\textbf{Analogy -- Painting a Bridge}
+
+A Blue/Green deployment is like painting a bridge. You do not close the bridge and
+repaint it while traffic is stopped. Instead, you build a second bridge next to it,
+paint that one, then redirect traffic. If anything is wrong, you switch back
+instantly -- the old bridge is still there.
+\end{analogybox}
+
+\textbf{Labs:} Integration Testing with CodePipeline \textbullet{}
+Blue/Green Deployments with CodeDeploy and EC2 \textbullet{}
+Deploying Standardized Assets with Service Catalog
+
+\newpage
+
+% --------------------------------------------------------
+%  WEEK 3
+% --------------------------------------------------------
+\section{Week 3 -- DevOps Part 3: DevSecOps}
+
+\textbf{Goal:} Understand DevSecOps and how to integrate security practices
+throughout the software development lifecycle rather than treating security as an
+afterthought.
+
+\textbf{Key topics:}
+\begin{itemize}[leftmargin=1.5em]
+  \item The role and key components of DevSecOps
+  \item Common software vulnerabilities (OWASP, CVEs, misconfigurations)
+  \item Security testing practices: SAST, DAST, dependency scanning
+  \item Amazon CodeGuru Security and Amazon Inspector
+  \item Automating vulnerability management at scale
+\end{itemize}
+
+\textbf{Key services:} Amazon Inspector, Amazon CodeGuru Security, AWS Security Hub
+
+\begin{analogybox}
+\textbf{Analogy -- Smoke Detectors vs.\ Fire Trucks}
+
+Traditional security is like calling the fire truck after the building is already
+burning. DevSecOps is like installing smoke detectors in every room -- you catch
+the problem at the earliest possible moment, when it is cheapest and easiest to fix.
+\end{analogybox}
+
+\textbf{Labs:} Vulnerability Scanning with Amazon Inspector \textbullet{}
+Secure Self-Service Infrastructure (SimuLearn) \textbullet{}
+Securing Your Servers (SimuLearn)
+
+\newpage
+
+% --------------------------------------------------------
+%  WEEK 4
+% --------------------------------------------------------
+\section{Week 4 -- Infrastructure as Code Part 1: Foundations and CloudFormation}
+
+\textbf{Goal:} Understand what Infrastructure as Code (IaC) is, how it fits into a
+DevOps workflow, and how to build reusable, parameterized AWS CloudFormation templates.
+
+\textbf{Key topics:}
+\begin{itemize}[leftmargin=1.5em]
+  \item What IaC is and the problems it solves over manual provisioning
+  \item Developer and infrastructure team responsibilities in IaC
+  \item AWS and non-AWS IaC tools (CloudFormation, CDK, Terraform)
+  \item CloudFormation template anatomy: intrinsic functions, conditions,
+        rules, DependsOn, macros, and modules
+  \item CloudFormation Designer
+\end{itemize}
+
+\textbf{Key services:} AWS CloudFormation, AWS CDK, AWS CodePipeline
+
+\begin{analogybox}
+\textbf{Analogy -- Architectural Blueprints}
+
+Before a building is constructed, architects produce detailed blueprints. Anyone
+with those blueprints can build an identical structure anywhere in the world.
+CloudFormation templates are your cloud blueprints -- version-controlled,
+repeatable, and shareable across every environment.
+\end{analogybox}
+
+\textbf{Labs:} Deploying IaC with CodePipeline \textbullet{}
+Building a Serverless API with Infrastructure Composer \textbullet{}
+CloudFormation Intrinsic Functions and Keywords
+
+\newpage
+
+% --------------------------------------------------------
+%  WEEK 5
+% --------------------------------------------------------
+\section{Week 5 -- Infrastructure as Code Part 2: Advanced Stacks and AWS CDK}
+
+\textbf{Goal:} Go deeper into CloudFormation stacks (nested stacks, drift detection,
+failure handling, change sets) and introduce the AWS Cloud Development Kit (CDK) as a
+code-first alternative to YAML templates.
+
+\textbf{Key topics:}
+\begin{itemize}[leftmargin=1.5em]
+  \item Stacks and change sets -- building, updating, and rolling back
+  \item Stack drift detection and remediation
+  \item Nested stacks and deploying multiple stacks
+  \item CloudFormation Registry and EventBridge integration
+  \item AWS CDK: provisioning resources with familiar programming languages
+  \item Testing CDK constructs
+\end{itemize}
+
+\textbf{Key services:} AWS CloudFormation, AWS CDK, Amazon EventBridge
+
+\begin{analogybox}
+\textbf{Analogy -- LEGO vs.\ Custom Bricks}
+
+CloudFormation YAML is like standard LEGO bricks -- reliable and well-documented.
+AWS CDK is like writing a program that \emph{generates} the LEGO instructions for
+you, using loops, conditions, and reusable functions. Both produce the same result,
+but CDK lets developers work in the language they already know.
+\end{analogybox}
+
+\textbf{Labs:} Deploying Advanced CloudFormation Stacks \textbullet{}
+Automation with CloudFormation (SimuLearn) \textbullet{}
+Working with Constructs in AWS CDK
+
+\newpage
+
+% --------------------------------------------------------
+%  WEEK 6
+% --------------------------------------------------------
+\section{Week 6 -- Logging and Scaling Part 1: Auto Scaling and Load Balancing}
+
+\textbf{Goal:} Learn how AWS Auto Scaling keeps your application right-sized under
+varying load, and how Elastic Load Balancing distributes traffic for high availability
+and zero-downtime deployments.
+
+\textbf{Key topics:}
+\begin{itemize}[leftmargin=1.5em]
+  \item How Auto Scaling works across EC2, ECS, DynamoDB, and Aurora
+  \item Scaling policies: target tracking, step scaling, scheduled, predictive
+  \item Launch templates, Spot Fleets, lifecycle hooks
+  \item Elastic Load Balancing types (ALB, NLB) and how they work
+  \item Using ALB for Blue/Green and canary deployments
+  \item ELB integration with Route~53 and AWS PrivateLink
+\end{itemize}
+
+\textbf{Key services:} Amazon EC2 Auto Scaling, Elastic Load Balancing, Amazon Route~53
+
+\begin{analogybox}
+\textbf{Analogy -- A Restaurant on a Busy Friday Night}
+
+Auto Scaling is like a restaurant that calls in extra staff when the dinner rush
+hits and sends them home when it quiets down. The load balancer is the host at the
+door -- directing each customer to a table so no single waiter is overwhelmed while
+others stand idle.
+\end{analogybox}
+
+\textbf{Labs:} Introduction to EC2 Auto Scaling \textbullet{}
+Introduction to Elastic Load Balancing \textbullet{}
+Highly Available Web Applications (SimuLearn)
+
+\newpage
+
+% --------------------------------------------------------
+%  WEEK 7
+% --------------------------------------------------------
+\section{Week 7 -- Logging and Scaling Part 2: CloudWatch Monitoring}
+
+\textbf{Goal:} Build a comprehensive monitoring strategy using Amazon CloudWatch --
+from basic metrics and dashboards to anomaly detection, container insights, and
+security monitoring.
+
+\textbf{Key topics:}
+\begin{itemize}[leftmargin=1.5em]
+  \item Logging overview and monitoring strategy
+  \item CloudWatch metrics, dashboards, and the CloudWatch Agent
+  \item AWS CloudTrail for API activity logging
+  \item Serverless observability, Container Insights, Application Insights
+  \item CloudWatch Anomaly Detection and Metric Streams
+  \item CloudWatch Synthetics, RUM, Logs Insights, Contributor Insights
+  \item High-resolution metrics, composite alarms, and scaling with alarms
+  \item Introduction to AWS X-Ray
+\end{itemize}
+
+\textbf{Key services:} Amazon CloudWatch, AWS CloudTrail, AWS X-Ray
+
+\begin{analogybox}
+\textbf{Analogy -- The Dashboard of a Car}
+
+You do not wait for your car to break down to check its health. The dashboard shows
+speed, fuel, temperature, and warning lights in real time. CloudWatch is your
+application's dashboard -- it tells you what is happening right now and warns you
+before something breaks.
+\end{analogybox}
+
+\textbf{Labs:} Collecting and Analyzing Logs with CloudWatch Logs Insights
+\textbullet{} Monitoring Security with Amazon CloudWatch
+
+\newpage
+
+% --------------------------------------------------------
+%  WEEK 8
+% --------------------------------------------------------
+\section{Week 8 -- Monitoring and Troubleshooting Part 1: CloudTrail and IAM}
+
+\textbf{Goal:} Apply a structured troubleshooting methodology to cloud infrastructure
+problems, use CloudTrail to investigate security incidents, and diagnose common IAM
+permission issues.
+
+\textbf{Key topics:}
+\begin{itemize}[leftmargin=1.5em]
+  \item Structured troubleshooting methodology (define, gather, hypothesize, test, fix)
+  \item CloudTrail event types and log file analysis
+  \item CloudTrail integration with other AWS services and CloudTrail Lake
+  \item Troubleshooting IAM policy errors and role assumption issues
+  \item Trust relationships and service-linked roles
+  \item Best practices for IAM policy management
+\end{itemize}
+
+\textbf{Key services:} AWS CloudTrail, AWS IAM, CloudTrail Lake
+
+\begin{analogybox}
+\textbf{Analogy -- The Black Box Recorder}
+
+Every commercial aircraft carries a black box that records every action taken in
+the cockpit. CloudTrail is your AWS black box -- every API call, who made it,
+when, and from where. When something goes wrong, it is the first place investigators
+look.
+\end{analogybox}
+
+\textbf{Labs:} Monitoring and Troubleshooting EC2 Workloads with Detective Controls
+\textbullet{} Performing a Basic Audit of Your AWS Environment
+
+\newpage
+
+% --------------------------------------------------------
+%  WEEK 9
+% --------------------------------------------------------
+\section{Week 9 -- Monitoring and Troubleshooting Part 2: Advanced Metrics}
+
+\textbf{Goal:} Go beyond standard metrics with custom metrics, cross-account
+monitoring, anomaly detection, and purpose-built insights tools for containers,
+Lambda, and networks.
+
+\textbf{Key topics:}
+\begin{itemize}[leftmargin=1.5em]
+  \item Publishing and using custom CloudWatch metrics
+  \item Cross-account, cross-Region monitoring
+  \item CloudWatch Anomaly Detection and Metrics Insights alarms
+  \item CloudWatch Container Insights for ECS and EKS
+  \item CloudWatch Lambda Insights -- cold starts, memory, duration
+  \item CloudWatch Internet Monitor and Network Monitor
+\end{itemize}
+
+\textbf{Key services:} Amazon CloudWatch -- Container Insights, Lambda Insights,
+Internet Monitor, Network Monitor
+
+\begin{analogybox}
+\textbf{Analogy -- Specialist Doctors vs.\ a General Practitioner}
+
+Standard CloudWatch metrics are like a GP -- great for a general health check.
+Container Insights and Lambda Insights are specialists: they know exactly which
+questions to ask about containers and serverless functions, surfacing details a
+general check would miss.
+\end{analogybox}
+
+\textbf{Labs:} Monitor and Analyze Network Traffic (SimuLearn)
+\textbullet{} Traffic Mirroring (SimuLearn)
+
+\newpage
+
+% --------------------------------------------------------
+%  WEEK 10
+% --------------------------------------------------------
+\section{Week 10 -- Monitoring and Troubleshooting Part 3: Log Analysis}
+
+\textbf{Goal:} Master log-based monitoring using CloudWatch Logs -- metric filters,
+Live Tail, Logs Insights queries, anomaly detection, VPC Flow Logs troubleshooting,
+and application-level monitoring tools.
+
+\textbf{Key topics:}
+\begin{itemize}[leftmargin=1.5em]
+  \item Metric filters -- extracting metrics from log data in real time
+  \item Live Tail -- streaming logs during deployments and incidents
+  \item CloudWatch Logs Insights -- querying and analyzing log data
+  \item Log anomaly detection and pattern analysis
+  \item Troubleshooting with VPC Flow Logs
+  \item CloudWatch Application Insights, Synthetics, RUM, Application Signals
+\end{itemize}
+
+\textbf{Key services:} Amazon CloudWatch Logs, VPC Flow Logs, CloudWatch Synthetics,
+CloudWatch RUM
+
+\begin{analogybox}
+\textbf{Analogy -- CCTV Footage}
+
+Logs are like CCTV footage of your application. Metric filters are motion-detection
+alerts that trigger when something specific happens. Live Tail is watching the live
+feed during an incident. Logs Insights is rewinding and searching the recording to
+find exactly what happened and when.
+\end{analogybox}
+
+\textbf{Labs:} Monitoring Applications and Infrastructure
+
+\newpage
+
+% --------------------------------------------------------
+%  WEEK 11
+% --------------------------------------------------------
+\section{Week 11 -- Monitoring and Troubleshooting Part 4: Distributed Tracing}
+
+\textbf{Goal:} Understand distributed tracing and use AWS X-Ray to follow a single
+request as it travels through multiple services, identify latency bottlenecks, and
+troubleshoot network reachability issues.
+
+\textbf{Key topics:}
+\begin{itemize}[leftmargin=1.5em]
+  \item X-Ray concepts: traces, segments, subsegments, annotations, metadata
+  \item Service graphs and trace maps
+  \item Filter expressions and latency histograms
+  \item X-Ray Insights and the Analytics console
+  \item Cross-account tracing and X-Ray SDK for Python
+  \item VPC Reachability Analyzer for network troubleshooting
+\end{itemize}
+
+\textbf{Key services:} AWS X-Ray, VPC Reachability Analyzer, CloudWatch ServiceLens
+
+\begin{analogybox}
+\textbf{Analogy -- Tracking a Package}
+
+When you order something online, the tracking system shows every stop the package
+made: warehouse, sorting facility, delivery truck, your door. X-Ray does the same
+for a web request -- it shows every service the request touched, how long each step
+took, and exactly where it slowed down or failed.
+\end{analogybox}
+
+\textbf{Labs:} Troubleshooting Website Reachability Behind a Load Balancer
+\textbullet{} Core Security Concepts (SimuLearn)
+
+\newpage
+
+% --------------------------------------------------------
+%  QUICK REFERENCE TABLE
+% --------------------------------------------------------
+\section*{Quick Reference -- Services by Week}
+\addcontentsline{toc}{section}{Quick Reference -- Services by Week}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{0.07\textwidth}|p{0.37\textwidth}|p{0.43\textwidth}|}
+\hline
+\textbf{Week} & \textbf{Theme} & \textbf{Key AWS Services} \\
+\hline
+1  & CI/CD and Automated Testing            & CodePipeline, CodeBuild, CodeGuru \\
+\hline
+2  & Deployment Strategies and Environments & CodeDeploy, Proton, Service Catalog \\
+\hline
+3  & DevSecOps                              & Inspector, CodeGuru Security, Security Hub \\
+\hline
+4  & IaC Foundations and CloudFormation     & CloudFormation, CDK, CodePipeline \\
+\hline
+5  & Advanced Stacks and CDK                & CloudFormation, CDK, EventBridge \\
+\hline
+6  & Auto Scaling and Load Balancing        & EC2 Auto Scaling, ELB, Route~53 \\
+\hline
+7  & CloudWatch Monitoring                  & CloudWatch, CloudTrail, X-Ray \\
+\hline
+8  & Troubleshooting: CloudTrail and IAM    & CloudTrail, IAM, CloudTrail Lake \\
+\hline
+9  & Advanced Metrics and Insights          & CloudWatch Insights, Internet Monitor \\
+\hline
+10 & Log Analysis and App Monitoring        & CloudWatch Logs, VPC Flow Logs, RUM \\
+\hline
+11 & Distributed Tracing with X-Ray         & X-Ray, Reachability Analyzer, ServiceLens \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{1.5cm}
+
+\begin{tcolorbox}[
+  colback=lightgray, colframe=awsorange, arc=6pt,
+  title={\textbf{Exam Alignment -- SysOps Administrator Associate (SOA-C02)}},
+  fonttitle=\color{white}, colbacktitle=awsorange]
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Domain 1} Monitoring, Logging, Remediation (20\%) $\rightarrow$ Weeks 7--11
+  \item \textbf{Domain 2} Reliability and Business Continuity (16\%) $\rightarrow$ Week 6
+  \item \textbf{Domain 3} Deployment, Provisioning, Automation (18\%) $\rightarrow$ Weeks 1--2, 4--5
+  \item \textbf{Domain 4} Security and Compliance (16\%) $\rightarrow$ Weeks 3, 8
+  \item \textbf{Domain 5} Networking and Content Delivery (18\%) $\rightarrow$ Weeks 6, 11
+  \item \textbf{Domain 6} Cost and Performance Optimization (12\%) $\rightarrow$ Weeks 6, 9
+\end{itemize}
+\end{tcolorbox}
+
+\end{document}

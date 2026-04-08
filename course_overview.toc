@@ -1,0 +1,13 @@
+\contentsline {section}{Course Overview}{2}{Doc-Start}%
+\contentsline {section}{\numberline {1}Week 1 -- DevOps Part 1: CI/CD and Automated Testing}{3}{section.1}%
+\contentsline {section}{\numberline {2}Week 2 -- DevOps Part 2: Deployment Strategies and DevOps Environments}{4}{section.2}%
+\contentsline {section}{\numberline {3}Week 3 -- DevOps Part 3: DevSecOps}{5}{section.3}%
+\contentsline {section}{\numberline {4}Week 4 -- Infrastructure as Code Part 1: Foundations and CloudFormation}{6}{section.4}%
+\contentsline {section}{\numberline {5}Week 5 -- Infrastructure as Code Part 2: Advanced Stacks and AWS CDK}{7}{section.5}%
+\contentsline {section}{\numberline {6}Week 6 -- Logging and Scaling Part 1: Auto Scaling and Load Balancing}{8}{section.6}%
+\contentsline {section}{\numberline {7}Week 7 -- Logging and Scaling Part 2: CloudWatch Monitoring}{9}{section.7}%
+\contentsline {section}{\numberline {8}Week 8 -- Monitoring and Troubleshooting Part 1: CloudTrail and IAM}{10}{section.8}%
+\contentsline {section}{\numberline {9}Week 9 -- Monitoring and Troubleshooting Part 2: Advanced Metrics}{11}{section.9}%
+\contentsline {section}{\numberline {10}Week 10 -- Monitoring and Troubleshooting Part 3: Log Analysis}{12}{section.10}%
+\contentsline {section}{\numberline {11}Week 11 -- Monitoring and Troubleshooting Part 4: Distributed Tracing}{13}{section.11}%
+\contentsline {section}{Quick Reference -- Services by Week}{14}{section.11}%
